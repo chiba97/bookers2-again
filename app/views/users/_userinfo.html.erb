@@ -13,16 +13,35 @@
           <th>introduction</th>
           <th><%= user.introduction %></th>
         </tr>
+        <tr>
+          <th>follows</th>
+          <th><%= link_to user.followings.count, followings_user_path(user) %></th>
+        </tr>
+        <tr>
+          <th>followers</th>
+          <th><%= link_to user.followers.count, followers_user_path(user) %></th>
+        </tr>
       </tbody>
     </table>
 
-
-    <%= link_to edit_user_path(user) do%>
-    <div class="row">
-      <button class="btn btn-outline-secondary btn-block">
-        <i class="fas fa-user-cog"></i>
-      </button>
-    </div>
+    <% if user.id == current_user.id %> 
+      <%= link_to edit_user_path(user) do%>
+      <div class="row">
+        <button class="btn btn-outline-secondary btn-block">
+          <i class="fas fa-user-cog"></i>
+        </button>
+      </div>
+      <% end %>
+    <% else %>
+      <% if user.is_followed_by?(current_user) %>
+        <%= link_to user_relationships_path(user), method: :delete do %>
+          <button class="btn btn-danger">フォロー解除</button>
+        <% end %>
+      <% else %>
+        <%= link_to user_relationships_path(user), method: :past do %>
+          <button class="btn btn-primary">フォロー</button>
+        <% end %>
+      <% end %>
     <% end %>
 
     <h2 class="mt-3">New book</h2>
