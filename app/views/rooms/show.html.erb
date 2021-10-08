@@ -1,0 +1,50 @@
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-12">
+      
+      <h1>チャットを始めよう！</h1>
+        <div class="user-name d-inline">
+          <% @RoomUsers.each do |r| %>
+          <strong>
+            <%= attachment_image_tag r.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
+            <%= r.user.name %>
+          </strong>
+        <% end %>
+        </div>
+        
+      <div>
+      <%= link_to "一覧ページに戻る", users_path,class: "d-inline-block mt-2" %>
+      </div>
+  
+  <hr>
+  
+  
+  <div class="chats">
+    <div class="chat">
+      <% if @messages.present? %>
+        <% @messages.each do |m| %>
+          <div class="chat-box">
+            <%= m.content %>
+            <div class="chat-text text-secondary">
+              @<%= m.user.name %>
+              送信時間：<%= m.created_at.strftime("%Y-%m-%d %H:%M")%>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <p>メッセージはまだありません</p>
+      <% end %>
+    </div>
+    
+    <div class="posts">
+      <%= form_with model: @message, local: true do |f| %>
+        <%= f.text_field :content, placeholder: "メッセージを入力してください", size: "50x6" %>
+        <%= f.hidden_field :room_id, value: @room.id %>
+        <%= f.submit "送信する" %>
+      <% end %>
+    </div>
+  </div>
+
+    </div>
+  </div>
+</div>

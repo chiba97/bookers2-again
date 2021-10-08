@@ -1,9 +1,15 @@
 class BooksController < ApplicationController
 
   def index
+    to  = Time.current.at_end_of_day
+    from  = (to - 6.day).at_beginning_of_day
     @user = current_user
     @book = Book.new
-    @books = Book.includes(:favorited_users).sort{|a,b| b.favorited_users.size <=> a.favorited_users.size }
+    @books = Book.includes(:favorited_users).
+      sort{|a,b| 
+        b.favorited_users.includes(:favorites).where(created_at: from...to).size <=>
+        a.favorited_users.includes(:favorites).where(created_at: from...to).size
+      }
   end
 
   def create
@@ -23,6 +29,29 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @user = @book.user
     @book_comment = BookComment.new
+    
+    
+    
+    # 下記dm機能
+    @currentRoomUser = Entry.where(user_id: current_user.id)
+    @receiveUser = Entry.where(user_id: @user.id)
+      
+    unless @user.id == current_user.id
+      @currentRoomUser.each do |cu|
+        @receiveUser.each do |u|
+          if cu.room_id == u.room_id
+            @haveRoom = true
+            @roomId = cu.room_id
+          end
+        end
+      end
+      unless @haveRoom
+        @room = Room.new
+        @entry = Entry.new
+      end
+    end
+      
+      
   end
 
   def edit
