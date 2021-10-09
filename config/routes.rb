@@ -16,5 +16,7 @@ Rails.application.routes.draw do
   resources "massages", only: [:create]
   resources "rooms", only: [:show,:create]
   
-  resources "groups"
+  resources "groups" do
+    get "join" => "groups#join"
+  end
 end
