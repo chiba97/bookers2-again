@@ -6,7 +6,7 @@ class BooksController < ApplicationController
     @user = current_user
     @book = Book.new
     @books = Book.includes(:favorited_users).
-      sort{|a,b| 
+      sort{|a,b|
         b.favorited_users.includes(:favorites).where(created_at: from...to).size <=>
         a.favorited_users.includes(:favorites).where(created_at: from...to).size
       }
@@ -29,17 +29,17 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @user = @book.user
     @book_comment = BookComment.new
-    
+
     unless ViewCount.find_by(user_id: current_user.id, book_id: @book.id)
       current_user.view_counts.create(book_id: @book.id)
     end
-    
-    
-    
+
+
+
     # 下記dm機能
     @currentRoomUser = Entry.where(user_id: current_user.id)
     @receiveUser = Entry.where(user_id: @user.id)
-      
+
     unless @user.id == current_user.id
       @currentRoomUser.each do |cu|
         @receiveUser.each do |u|
@@ -54,8 +54,8 @@ class BooksController < ApplicationController
         @entry = Entry.new
       end
     end
-      
-      
+
+
   end
 
   def edit
@@ -83,7 +83,7 @@ class BooksController < ApplicationController
 
   private
   def book_params
-    params.require(:book).permit(:title,:body)
+    params.require(:book).permit(:title,:body,:rate)
   end
-  
+
 end

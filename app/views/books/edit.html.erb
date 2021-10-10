@@ -24,6 +24,11 @@
           <lavel>Opinion</lavel>
           <%= f.text_area :body,class: "form-control-file" %>
         </div>
+        
+        <div class="form-grop mb-3">
+          <lavel>Rate</lavel>
+          <div class="book-star" data-score="<%= @book.rate %>"></div>
+        </div>
   
         <div class="form-grop mb-3">
           <%= f.submit "Create Group", class: "btn btn-success"%>
@@ -32,3 +37,12 @@
     </div>
   </div>
 </div>
+<script>
+  $('.book-star').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+</script>

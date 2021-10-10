@@ -45,11 +45,22 @@
             <td>
               閲覧数：<%= book.view_counts.count %>
             </td>
+            <td>
+              <td class="book-star" data-score="<%= book.rate %>"></td>
+            </td>
           </tr>
           <% end %>
         </tbody>
       </table>
     </div>
-
   </div>
 </div>
+<script>
+  $('.book-star').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+</script>

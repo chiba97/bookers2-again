@@ -36,7 +36,7 @@
             <td>
               閲覧数：<%= @book.view_counts.count %>
             </td>
-          </tr>
+            <td class="book-star" data-score="<%= @book.rate %>"></td>
         </tbody>
       </table>
       <div id="book_comment">
@@ -47,6 +47,14 @@
           <%= f.submit "送信" %>
         <% end %>
     </div>
-
   </div>
 </div>
+<script>
+  $('.book-star').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+</script>

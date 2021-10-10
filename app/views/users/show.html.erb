@@ -29,11 +29,20 @@
             </td>
             <td><%= book.body %></td>
             <td>コメント数：<%= book.book_comments.count %></td>
+            <td class="book-star" data-score="<%= book.rate %>"></td>
           </tr>
           <% end %>
         </tbody>
       </table>
     </div>
-
-  </div>
 </div>
+</div>
+<script>
+  $('.book-star').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+</script>

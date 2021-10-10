@@ -12,10 +12,10 @@ Rails.application.routes.draw do
     get :followers, on: :member
   end
   get "search" => "searches#search"
-  
+
   resources "massages", only: [:create]
   resources "rooms", only: [:show,:create]
-  
+
   resources "groups" do
     get "join" => "groups#join"
     get "new/mail" => "groups#new_mail"
