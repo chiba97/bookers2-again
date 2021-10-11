@@ -5,11 +5,17 @@ class BooksController < ApplicationController
     from  = (to - 6.day).at_beginning_of_day
     @user = current_user
     @book = Book.new
-    @books = Book.includes(:favorited_users).
-      sort{|a,b|
-        b.favorited_users.includes(:favorites).where(created_at: from...to).size <=>
-        a.favorited_users.includes(:favorites).where(created_at: from...to).size
-      }
+    if params[:sort_create]
+      @books = Book.latest
+    elsif params[:sort_rate]
+      @books = Book.rating
+    else
+      @books = Book.includes(:favorited_users).
+        sort{|a,b|
+          b.favorited_users.includes(:favorites).where(created_at: from...to).size <=>
+          a.favorited_users.includes(:favorites).where(created_at: from...to).size
+        }
+    end
   end
 
   def create
