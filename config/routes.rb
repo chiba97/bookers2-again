@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get :followers, on: :member
   end
   get "search" => "searches#search"
+  get "search_book" => "books#search_book"
 
   resources "massages", only: [:create]
   resources "rooms", only: [:show,:create]

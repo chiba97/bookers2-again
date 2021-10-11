@@ -16,17 +16,17 @@
       
       <%= form_with model: @book,local:true do |f| %>
         <div class="form-grop mb-3">
-          <lavel>Title</lavel>
+          <label>Title</label>
           <%= f.text_field :title,class: "form-control" %>
         </div>
   
         <div class="form-grop mb-3">
-          <lavel>Opinion</lavel>
+          <label>Opinion</label>
           <%= f.text_area :body,class: "form-control-file" %>
         </div>
         
         <div class="form-grop mb-3">
-          <lavel>Rate</lavel>
+          <label>Rate</label>
           <div class="book-star" data-score="<%= @book.rate %>"></div>
         </div>
   

@@ -64,13 +64,18 @@
     <%= form_with model: book,local:true do |f| %>
 
       <div class="form-grop mb-3">
-        <lavel class="mb-3">Title</lavel>
+        <%= f.label :title %>
         <%= f.text_field :title,class: "form-control" %>
       </div>
 
       <div class="form-grop mb-3">
-        <lavel class="mb-3">Opinion</lavel>
+        <%= f.label :opinion %>
         <%= f.text_area :body, class: "form-control" %>
+      </div>
+
+      <div class="form-grop mb-3">
+        <%= f.label :category %>
+        <%= f.text_field :category, class: "form-control" %>
       </div>
 
       <div id="star">
