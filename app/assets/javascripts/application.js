@@ -20,4 +20,5 @@
 //= require turbolinks
 //= require jquery
 //= require_tree .
+//= require social-share-button
 
