@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get "search_book" => "books#search_book"
 
   resources "massages", only: [:create]
-  resources "rooms", only: [:show,:create]
+  resources "rooms", only: [:show, :create]
 
   resources "groups" do
     get "join" => "groups#join"

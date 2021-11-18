@@ -1,8 +1,7 @@
 class BooksController < ApplicationController
-
   def index
-    to  = Time.current.at_end_of_day
-    from  = (to - 6.day).at_beginning_of_day
+    to = Time.current.at_end_of_day
+    from = (to - 6.day).at_beginning_of_day
     @user = current_user
     @book = Book.new
     if params[:sort_create]
@@ -11,10 +10,10 @@ class BooksController < ApplicationController
       @books = Book.rating
     else
       @books = Book.includes(:favorited_users).
-        sort{|a,b|
+        sort do |a, b|
           b.favorited_users.includes(:favorites).where(created_at: from...to).size <=>
           a.favorited_users.includes(:favorites).where(created_at: from...to).size
-        }
+        end
     end
   end
 
@@ -40,8 +39,6 @@ class BooksController < ApplicationController
       current_user.view_counts.create(book_id: @book.id)
     end
 
-
-
     # 下記dm機能
     @currentRoomUser = Entry.where(user_id: current_user.id)
     @receiveUser = Entry.where(user_id: @user.id)
@@ -60,8 +57,6 @@ class BooksController < ApplicationController
         @entry = Entry.new
       end
     end
-
-
   end
 
   def edit
@@ -74,7 +69,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
-       redirect_to book_path(@book), notice: "You have updated book successfully."
+      redirect_to book_path(@book), notice: "You have updated book successfully."
     else
       render :edit
     end
@@ -85,17 +80,16 @@ class BooksController < ApplicationController
     @book.destroy
     redirect_to books_path
   end
-  
+
   def search_book
     @book = Book.new
     @user = current_user
     @books = Book.search(params[:keyword])
   end
 
-
   private
-  def book_params
-    params.require(:book).permit(:title,:body,:rate,:category)
-  end
 
+  def book_params
+    params.require(:book).permit(:title, :body, :rate, :category)
+  end
 end
