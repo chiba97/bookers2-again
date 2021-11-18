@@ -9,10 +9,10 @@ class BooksController < ApplicationController
     elsif params[:sort_rate]
       @books = Book.rating
     else
-      @books = Book.includes(:favorited_users).
+      @books = Book.all.
         sort do |a, b|
-          b.favorited_users.includes(:favorites).where(created_at: from...to).size <=>
-          a.favorited_users.includes(:favorites).where(created_at: from...to).size
+          b.favorited_users.where(created_at: from...to).size <=>
+          a.favorited_users.where(created_at: from...to).size
         end
     end
   end
