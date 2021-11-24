@@ -2,6 +2,7 @@
 
 <img width="1440" alt="スクリーンショット 2021-11-24 11 50 21" src="https://user-images.githubusercontent.com/88390294/143163883-d500d031-1f80-43eb-a728-895e87a9de1e.png">
 <img src="https://user-images.githubusercontent.com/88390294/143184668-982bcd91-887b-4370-9792-80a751cd534d.jpeg">
+![IMG_8815](https://user-images.githubusercontent.com/88390294/143184668-982bcd91-887b-4370-9792-80a751cd534d.jpeg)
 
 ## 概要
 「ペットと共に人生を歩んでいる人に向けたサイト」
