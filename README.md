@@ -1,11 +1,8 @@
 # 『ANI-CLE』
 
 <img width="1440" alt="パソコンサイズ表示画面" src="https://user-images.githubusercontent.com/88390294/143163883-d500d031-1f80-43eb-a728-895e87a9de1e.png">
-<img width="324" alt="スマートフォンサイズ表示画面" src="https://user-images.githubusercontent.com/88390294/143185261-87b06c25-be63-4fd7-b0b1-8b3c3b904715.png">
-<img width="578" alt="タブレットサイズ表示画面" src="https://user-images.githubusercontent.com/88390294/143185536-2fc76c79-b0d8-483a-8f3d-f77e5b00fcdc.png">
-<img width="568" alt="スクリーンショット 2021-11-24 15 24 28" src="https://user-images.githubusercontent.com/88390294/143185979-4e7139fd-2aad-45b4-9df0-5df8fd848af2.png">
-<img width="322" alt="スクリーンショット 2021-11-24 15 28 11" src="https://user-images.githubusercontent.com/88390294/143186384-f4814227-29a3-4913-a705-42c09ed79a5c.png">
-<img width="344" alt="スクリーンショット 2021-11-24 15 30 29" src="https://user-images.githubusercontent.com/88390294/143186627-0e852363-47e1-4261-bbb0-9ffc219ea141.png"><img width="409" alt="スクリーンショット 2021-11-24 15 33 05" src="https://user-images.githubusercontent.com/88390294/143186979-01204063-7bb2-4585-9bf2-fd55c5b93299.png">
+
+<img width="344" alt="スマートフォンサイズ表示画像" src="https://user-images.githubusercontent.com/88390294/143186627-0e852363-47e1-4261-bbb0-9ffc219ea141.png"><img width="409" alt="タブレットサイズ表示画像" src="https://user-images.githubusercontent.com/88390294/143186979-01204063-7bb2-4585-9bf2-fd55c5b93299.png">
 
 
 
