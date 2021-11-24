@@ -1,7 +1,10 @@
 # 『ANI-CLE』
 
-<img width="1440" alt="スクリーンショット 2021-11-24 11 50 21" src="https://user-images.githubusercontent.com/88390294/143163883-d500d031-1f80-43eb-a728-895e87a9de1e.png">
-<img width="324" alt="スクリーンショット 2021-11-24 15 18 10" src="https://user-images.githubusercontent.com/88390294/143185261-87b06c25-be63-4fd7-b0b1-8b3c3b904715.png">
+<img width="1440" alt="パソコンサイズ表示画面" src="https://user-images.githubusercontent.com/88390294/143163883-d500d031-1f80-43eb-a728-895e87a9de1e.png">
+<img width="324" alt="スマートフォンサイズ表示画面" src="https://user-images.githubusercontent.com/88390294/143185261-87b06c25-be63-4fd7-b0b1-8b3c3b904715.png">
+<img width="578" alt="タブレットサイズ表示画面" src="https://user-images.githubusercontent.com/88390294/143185536-2fc76c79-b0d8-483a-8f3d-f77e5b00fcdc.png">
+
+
 
 ## 概要
 「ペットと共に人生を歩んでいる人に向けたサイト」
