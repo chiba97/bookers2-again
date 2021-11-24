@@ -89,7 +89,7 @@ https://ani-cle.com
 ## 環境・使用技術
 
 ### フロントエンド
-* Bootstrap 4.5.0
+* Bootstrap 4.5
 * JavaScript、jQuery、Ajax
 
 ### バックエンド
