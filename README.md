@@ -4,11 +4,6 @@
 
 <img width="344" alt="スマートフォンサイズ表示画像" src="https://user-images.githubusercontent.com/88390294/143186627-0e852363-47e1-4261-bbb0-9ffc219ea141.png">　　　<img width="409" alt="タブレットサイズ表示画像" src="https://user-images.githubusercontent.com/88390294/143186979-01204063-7bb2-4585-9bf2-fd55c5b93299.png">
 
-
-
-
-
-
 ## 概要
 「ペットと共に人生を歩んでいる人に向けたサイト」
 ペットを大切に思う人たちによるペットの為の輪を広げたいという思いがあり、 "animal-circle"からとりまして、サイト名を"ANI-CLE"と名付けました。 自分のペットの自慢話や飼育情報等を自由に投稿し合ったりすることでペットを大切にしている者同士が繋がり、 情報交換のできる場にもなるサイトです。
@@ -17,13 +12,13 @@
 https://ani-cle.com
 
 【テスト会員アカウント】
-メールアドレス： user@gmail.com
-パスワード： 111111
+* メールアドレス： user@gmail.com
+* パスワード： 111111
 【テスト管理者アカウント】
-メールアドレス： admin@gmail.com
-パスワード： 111111
+* メールアドレス： admin@gmail.com
+* パスワード： 111111
 【ゲストログイン】
-ゲストログインボタンからテストユーザーとして簡単にログインできます。
+* ゲストログインボタンからテストユーザーとして簡単にログインできます。
 
 ## 制作の背景
 私は実家で初めて犬を飼いだしてから、自分の飼っている犬にはもちろん他の方が飼っている動物に対しても凄く興味が湧きました。
@@ -66,8 +61,8 @@ https://ani-cle.com
 * レスポンシブデザイン
   - タブレット（width-768以下）
   - スマートフォン（width-414-375-320以下）
-*　コード解析（Rubocop）
-*　N＋１問題（bullet）
+* コード解析（Rubocop）
+* N＋１問題（bullet）
 
 詳細は下記よりご確認ください。
 * [機能詳細](https://docs.google.com/spreadsheets/d/1LbGVL06nWAO9izmFYdmhg0EM_rQjFq1YAbzYYbgV_I8/edit?usp=sharing)
@@ -106,7 +101,7 @@ https://ani-cle.com
 
 ### インフラ構成図
 
-<img width="717" alt="スクリーンショット 2021-11-24 11 41 53" src="https://user-images.githubusercontent.com/88390294/143163908-1f1bfdfb-89ad-4f55-96b5-95969e76d4ca.png">
+<img width="702" alt="インフラ構成図画像" src="https://user-images.githubusercontent.com/88390294/143188871-0e91f796-5dc0-490d-ac7e-41be73b68d8f.png">
 
 ### テスト
 * Rspec (単体／結合）一部 項目数：計250以上
